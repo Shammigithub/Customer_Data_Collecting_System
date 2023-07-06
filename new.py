@@ -7,6 +7,7 @@ import os
 from tkinter.ttk import Combobox
 import openpyxl, xlrd
 from openpyxl import Workbook
+from openpyxl import load_workbook
 import pathlib
 from time import strftime
 import pandas as pd
@@ -52,7 +53,7 @@ def ok():
         if (email == "" and password == ""):
             messagebox.showinfo("", "Blank not allowed")
 
-        elif (email == "asankadilshan44098@gmail.com" and password == "12345"):
+        elif (email == "1" and password == "12345"):   #asankadilshan44098@gmail.com
             messagebox.showinfo("", "Login success")
             root2.withdraw()
 
@@ -69,14 +70,61 @@ def ok():
             Label(root3, text='!..Welcome..!', width=10, height=2, bg="#70BBAA", fg='#fff', font='arial 20 bold').pack(
                 side=TOP, fill=X)
 
-            # Search
-            Search = StringVar()
-            e1 = Entry(root3, textvariable=Search, width=15, bd=2, font="arial 20").place(x=820, y=70)
-            Srch = Button(root3, text="Search", compound=LEFT, width=123, bg='#68ddfa',
-                          font='arial 13 bold', )  # command=search)
-            Srch.place(x=1060, y=66)
+            def search():
+                search_date = date_entry.get()
+
+                # Clear the search results
+                search_results.delete(*search_results.get_children())
+
+                for row in sheet.iter_rows(values_only=True):
+                    if row[4] == search_date:
+                        search_results.insert("", "end", values=row)
+
+            # Load the workbook
+            workbook = load_workbook('Customer_data.xlsx')
+            # Get the active sheet
+            sheet = workbook.active
 
 
+
+            date_entry = Entry(root3, width=30)
+            date_entry.pack(pady=10)
+
+            search_button = Button(root3, text="Search", command=search)
+            search_button.pack(pady=5)
+
+            search_results = ttk.Treeview(root3)
+            search_results["columns"] = (
+            "Registration No.", "Name", "Gender", "NIC", "Date of Come", "Time", "Address", "Tel. No.")
+
+            # Configure columns
+            search_results.column("#0", width=0, stretch=NO)
+            search_results.column("Registration No.", width=100)
+            search_results.column("Name", width=100)
+            search_results.column("Gender", width=100)
+            search_results.column("NIC", width=100)
+            search_results.column("Date of Come", width=100)
+            search_results.column("Time", width=100)
+            search_results.column("Address", width=100)
+            search_results.column("Tel. No.", width=100)
+
+            # Create headings
+            search_results.heading("#0", text="", anchor=W)
+            search_results.heading("Registration No.", text="Registration No.")
+            search_results.heading("Name", text="Name")
+            search_results.heading("Gender", text="Gender")
+            search_results.heading("NIC", text="NIC")
+            search_results.heading("Date of Come", text="Date of Come")
+            search_results.heading("Time", text="Time")
+            search_results.heading("Address", text="Address")
+            search_results.heading("Tel. No.", text="Tel. No.")
+
+            search_results.pack(fill=BOTH, expand=True, padx=20, pady=10)
+
+            scrollbar = Scrollbar(root3)
+            scrollbar.pack(side=RIGHT, fill=Y)
+            search_results.config(yscrollcommand=scrollbar.set)
+            scrollbar.config(command=search_results.yview)
 
             # bottom frames
             Label(root3, text='', width=10, height=1, bg="#429683", ).pack(side=BOTTOM, fill=X)
