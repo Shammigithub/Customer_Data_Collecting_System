@@ -93,7 +93,10 @@ def ok():
             search_button = Button(root3, text="Search", command=search)
             search_button.pack(pady=5)
 
-            search_results = ttk.Treeview(root3)
+            search_results_frame = Frame(root3)
+            search_results_frame.pack(fill=BOTH, expand=True, padx=20, pady=10)
+
+            search_results = ttk.Treeview(search_results_frame)
             search_results["columns"] = (
             "Registration No.", "Name", "Gender", "NIC", "Date of Come", "Time", "Address", "Tel. No.")
 
@@ -119,12 +122,12 @@ def ok():
             search_results.heading("Address", text="Address")
             search_results.heading("Tel. No.", text="Tel. No.")
 
-            search_results.pack(fill=BOTH, expand=True, padx=20, pady=10)
+            search_results.pack(side=LEFT, fill=BOTH, expand=True)
 
-            scrollbar = Scrollbar(root3)
+            # Add scrollbar to the right of the treeview
+            scrollbar = Scrollbar(search_results_frame, orient=VERTICAL, command=search_results.yview)
             scrollbar.pack(side=RIGHT, fill=Y)
-            search_results.config(yscrollcommand=scrollbar.set)
-            scrollbar.config(command=search_results.yview)
+            search_results.configure(yscrollcommand=scrollbar.set)
 
             # bottom frames
             Label(root3, text='', width=10, height=1, bg="#429683", ).pack(side=BOTTOM, fill=X)
