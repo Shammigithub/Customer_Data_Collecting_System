@@ -61,7 +61,8 @@ def ok():
 
             # top frames
             Label(root3, text='', width=10, height=1, bg="#429683", font="arial 28 bold").pack(side=TOP, fill=X)
-            Label(root3, text='AD Store', width=10, height=1, bg="#429683", font="arial 30 bold").pack(side=TOP, fill=X)
+            Label(root3, text='AD Grossery Shop', width=10, height=1, bg="#429683", font="arial 30 bold").pack(side=TOP,
+                                                                                                               fill=X)
             Label(root3, text='!..Welcome..!', width=10, height=2, bg="#70BBAA", fg='#fff', font='arial 20 bold').pack(
                 side=TOP, fill=X)
 
@@ -159,7 +160,7 @@ def ok():
 
     # top frames
     Label(root2, text='', width=10, height=1, bg="#429683", font="arial 28 bold").pack(side=TOP, fill=X)
-    Label(root2, text='AD Store', width=10, height=1, bg="#429683", font="arial 30 bold").pack(side=TOP, fill=X)
+    Label(root2, text='AD Grossery Shop', width=10, height=1, bg="#429683", font="arial 30 bold").pack(side=TOP, fill=X)
     Label(root2, text='!..Welcome..!', width=10, height=2, bg="#70BBAA", fg='#fff', font='arial 20 bold').pack(
         side=TOP, fill=X)
 
@@ -218,6 +219,7 @@ def Clear():
     Time.set('')
     Address.set('')
     Tel.set('')
+
 
     registration_no()
 
@@ -278,7 +280,7 @@ def selection():
 
 # top frames
 Label(root, text='', width=10, height=1, bg="#429683", font="arial 28 bold").pack(side=TOP, fill=X)
-Label(root, text='AD Store', width=10, height=1, bg="#429683", font="arial 30 bold").pack(side=TOP, fill=X)
+Label(root, text='AD Grossery Shop', width=10, height=1, bg="#429683", font="arial 30 bold").pack(side=TOP, fill=X)
 Label(root, text='!..Welcome..!', width=10, height=2, bg="#70BBAA", fg='#fff', font='arial 20 bold').pack(
     side=TOP, fill=X)
 
