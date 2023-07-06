@@ -18,7 +18,7 @@ framefg = "#062831"
 
 root = Tk()
 root.title("Customer Information System")
-root.geometry("1250x700+210+100")
+root.geometry("1250x700+0+00")
 root.config(bg=background)
 
 file = pathlib.Path('Customer_data.xlsx')
@@ -52,22 +52,22 @@ def ok():
         if (email == "" and password == ""):
             messagebox.showinfo("", "Blank not allowed")
 
-        elif (email == "SSK" and password == "12345"):
+        elif (email == "asankadilshan44098@gmail.com" and password == "12345"):
             messagebox.showinfo("", "Login success")
             root2.withdraw()
 
             root3 = Tk()
             root3.title("Customer Information System")
-            root3.geometry("1250x700+210+100")
+            root3.geometry("1250x700+0+00")
             root3.config(bg=background)
 
             # def search():
 
             # top frames
             Label(root3, text='', width=10, height=1, bg="lightgreen", font="arial 28 bold").pack(side=TOP, fill=X)
-            Label(root3, text='Bandula Shop', width=10, height=1, bg="lightgreen", font="arial 28 bold").pack(side=TOP,
-                                                                                                              fill=X)
-            Label(root3, text='Welcome', width=10, height=2, bg="green", fg='#fff', font='arial 20 bold').pack(
+            Label(root3, text='AD Store', width=10, height=1, bg="lightgreen", font="arial 30 bold").pack(side=TOP,
+                                                                                                          fill=X)
+            Label(root3, text='!..Welcome..!', width=10, height=2, bg="green", fg='#fff', font='arial 20 bold').pack(
                 side=TOP, fill=X)
 
             # Search
@@ -79,10 +79,10 @@ def ok():
 
             # bottom frames
             Label(root3, text='', width=10, height=1, bg="lightyellow", ).pack(side=BOTTOM, fill=X)
-            Label(root3, text='091-9384562', width=10, height=1, bg="lightyellow", ).pack(side=BOTTOM, fill=X)
-            Label(root3, text='Galle', width=10, height=1, bg="lightyellow", ).pack(side=BOTTOM, fill=X)
-            Label(root3, text='Thellambura', width=10, height=1, bg="lightyellow", ).pack(side=BOTTOM, fill=X)
-            Label(root3, text='Udugama Road,', width=10, height=1, bg="lightyellow", ).pack(side=BOTTOM, fill=X)
+            Label(root3, text='077-0867965', width=10, height=1, bg="lightyellow", font='arial 10 bold' ).pack(side=BOTTOM, fill=X)
+            Label(root3, text='Galle', width=10, height=1, bg="lightyellow", font='arial 10 bold' ).pack(side=BOTTOM, fill=X)
+            Label(root3, text='Karagoda', width=10, height=1, bg="lightyellow", font='arial 10 bold' ).pack(side=BOTTOM, fill=X)
+            Label(root3, text='Mulanagoda,', width=10, height=1, bg="lightyellow", font='arial 10 bold' ).pack(side=BOTTOM, fill=X)
             Label(root3, text='Thank You Come Again', width=10, height=2, bg="#c36464", fg='#fff',
                   font='arial 20 bold').pack(
                 side=BOTTOM, fill=X)
@@ -97,7 +97,7 @@ def ok():
 
     root2 = Tk()
     root2.title("Customer Information System")
-    root2.geometry("1250x700+210+100")
+    root2.geometry("1250x700+0+00")
     root2.config(bg=background)
 
     global entry1
@@ -105,21 +105,21 @@ def ok():
 
     # top frames
     Label(root2, text='', width=10, height=1, bg="lightgreen", font="arial 28 bold").pack(side=TOP, fill=X)
-    Label(root2, text='Bandula Shop', width=10, height=1, bg="lightgreen", font="arial 28 bold").pack(side=TOP, fill=X)
-    Label(root2, text='Welcome', width=10, height=2, bg="green", fg='#fff', font='arial 20 bold').pack(
+    Label(root2, text='AD Store', width=10, height=1, bg="lightgreen", font="arial 30 bold").pack(side=TOP, fill=X)
+    Label(root2, text='!..Welcome..!', width=10, height=2, bg="green", fg='#fff', font='arial 20 bold').pack(
         side=TOP, fill=X)
 
     # bottom frames
-    Label(root2, text='', width=10, height=1, bg="lightyellow", ).pack(side=BOTTOM, fill=X)
-    Label(root2, text='091-9384562', width=10, height=1, bg="lightyellow", ).pack(side=BOTTOM, fill=X)
-    Label(root2, text='Galle', width=10, height=1, bg="lightyellow", ).pack(side=BOTTOM, fill=X)
-    Label(root2, text='Thellambura', width=10, height=1, bg="lightyellow", ).pack(side=BOTTOM, fill=X)
-    Label(root2, text='Udugama Road,', width=10, height=1, bg="lightyellow", ).pack(side=BOTTOM, fill=X)
+    Label(root2, text='', width=10, height=1, bg="lightyellow",  ).pack(side=BOTTOM, fill=X)
+    Label(root2, text='077-0867965', width=10, height=1, bg="lightyellow", font='arial 10 bold').pack(side=BOTTOM, fill=X)
+    Label(root2, text='Galle', width=10, height=1, bg="lightyellow", font='arial 10 bold' ).pack(side=BOTTOM, fill=X)
+    Label(root2, text='Karagoda', width=10, height=1, bg="lightyellow", font='arial 10 bold' ).pack(side=BOTTOM, fill=X)
+    Label(root2, text='Mulanagoda,', width=10, height=1, bg="lightyellow", font='arial 10 bold' ).pack(side=BOTTOM, fill=X)
     Label(root2, text='Thank You Come Again', width=10, height=2, bg="#c36464", fg='#fff', font='arial 20 bold').pack(
         side=BOTTOM, fill=X)
 
     # Sign in Window
-    obj = LabelFrame(root2, text="User Login", font=20, bd=2, width=300, bg=framebg, fg=framefg, height=300)
+    obj =  LabelFrame(root2, text="User Login", font=20, bd=2, width=300, bg=framebg, fg=framefg, height=300,)
     obj.place(x=500, y=200)
     Label(root2, text="E-mail", width=10).place(x=520, y=280)
     Label(root2, text="Password", width=10).place(x=520, y=330)
@@ -234,16 +234,16 @@ def selection():
 
 # top frames
 Label(root, text='', width=10, height=1, bg="lightgreen", font="arial 28 bold").pack(side=TOP, fill=X)
-Label(root, text='Bandula Shop', width=10, height=1, bg="lightgreen", font="arial 28 bold").pack(side=TOP, fill=X)
-Label(root, text='Welcome', width=10, height=2, bg="green", fg='#fff', font='arial 20 bold').pack(
+Label(root, text='AD Store', width=10, height=1, bg="lightgreen", font="arial 30 bold").pack(side=TOP, fill=X)
+Label(root, text='!..Welcome..!', width=10, height=2, bg="green", fg='#fff', font='arial 20 bold').pack(
     side=TOP, fill=X)
 
 # bottom frames
 Label(root, text='', width=10, height=1, bg="lightyellow", ).pack(side=BOTTOM, fill=X)
-Label(root, text='091-9384562', width=10, height=1, bg="lightyellow", ).pack(side=BOTTOM, fill=X)
-Label(root, text='Galle', width=10, height=1, bg="lightyellow", ).pack(side=BOTTOM, fill=X)
-Label(root, text='Thellambura', width=10, height=1, bg="lightyellow", ).pack(side=BOTTOM, fill=X)
-Label(root, text='Udugama Road,', width=10, height=1, bg="lightyellow", ).pack(side=BOTTOM, fill=X)
+Label(root, text='077-0867965', width=10, height=1, bg="lightyellow", font='arial 10 bold' ).pack(side=BOTTOM, fill=X)
+Label(root, text='Galle', width=10, height=1, bg="lightyellow", font='arial 10 bold' ).pack(side=BOTTOM, fill=X)
+Label(root, text='Karagoda', width=10, height=1, bg="lightyellow", font='arial 10 bold' ).pack(side=BOTTOM, fill=X)
+Label(root, text='Mulanagoda,', width=10, height=1, bg="lightyellow", font='arial 10 bold' ).pack(side=BOTTOM, fill=X)
 
 Label(root, text='Thank You Come Again', width=10, height=2, bg="#c36464", fg='#fff', font='arial 20 bold').pack(
     side=BOTTOM, fill=X)
@@ -251,9 +251,11 @@ Label(root, text='Thank You Come Again', width=10, height=2, bg="#c36464", fg='#
 # Registration and Date
 Label(root, text="Registration No.", font='arial 13', fg=framebg, bg=background).place(x=30, y=200)
 Label(root, text="Date", font='arial 13', fg=framebg, bg=background).place(x=500, y=200)
+Label(root, text="Time", font='arial 13', fg=framebg, bg=background).place(x=700, y=200)
 
 Registration = IntVar()
 Date = StringVar()
+Time = StringVar()
 
 reg_entry = Entry(root, textvariable=Registration, width=15, font='arial 10')
 reg_entry.place(x=160, y=200)
@@ -267,10 +269,16 @@ date_entry.place(x=550, y=200)
 
 Date.set(d1)
 
+#day = time.day()
+#t1 = day.strftime("%H:%M:%S %p")
+#time_entry = Entry(root, textvariable="Time", width=15, font='arial 10')
+#time_entry.place(x=750, y=200)
+
+#Time.set(t1)
 # Customer details
-obj = LabelFrame(root, text="Customer's Details", font=20, bd=2, width=900, bg=framebg, fg=framefg, height=250,
+obj = LabelFrame(root, text="Customer's Details", font=20, bd=3, width=900, bg=framebg, fg=framefg, height=250,
                  relief=GROOVE)
-obj.place(x=35, y=250)
+obj.place(x=50, y=250)
 
 Label(root, text="Full Name:", font="arial 13", bg=framebg, fg=framefg).place(x=90, y=320)
 Label(root, text="Gender:", font="arial 13", bg=framebg, fg=framefg).place(x=90, y=370)
@@ -279,7 +287,6 @@ Label(root, text="NIC:", font="arial 13", bg=framebg, fg=framefg).place(x=90, y=
 Label(root, text="Time:", font="arial 13", bg=framebg, fg=framefg).place(x=550, y=320)
 Label(root, text="Address:", font="arial 13", bg=framebg, fg=framefg).place(x=550, y=370)
 Label(root, text="Tel. No.:", font="arial 13", bg=framebg, fg=framefg).place(x=550, y=420)
-
 
 Name = StringVar()
 name_entry = Entry(obj, textvariable=Name, width=20, font="arial 10")
@@ -296,12 +303,10 @@ NIC = StringVar()
 nic_entry = Entry(obj, textvariable=NIC, width=20, font="arial 10")
 nic_entry.place(x=180, y=150)
 
-Time = StringVar()
-#Label(obj, text="Time:", font="arial 13", bg=framebg, fg=framefg).place(x=630, y=50)
+# Time = StringVar()
+# Label(obj, text="Time:", font="arial 13", bg=framebg, fg=framefg).place(x=630, y=50)
 time_entry = Entry(obj, textvariable=Time, width=20, font="arial 10")
 time_entry.place(x=630, y=50)
-
-
 
 # current = time.current()
 # t1 = current.strftime("%d/%m/%Y")
