@@ -1,16 +1,12 @@
 from tkinter import *
 from datetime import date
-from tkinter import filedialog, ttk
+from tkinter import ttk
 from tkinter import messagebox
-
-import os
-from tkinter.ttk import Combobox
-import openpyxl, xlrd
+import openpyxl
 from openpyxl import Workbook
 from openpyxl import load_workbook
 import pathlib
 from time import strftime
-import pandas as pd
 from time import *
 
 background = "#062831"
@@ -19,7 +15,7 @@ framefg = "#062831"
 
 root = Tk()
 root.title("Customer Information System")
-root.geometry("1250x700+0+00")
+root.geometry("1250x750+0+00")
 root.config(bg=background)
 
 file = pathlib.Path('Customer_data.xlsx')
@@ -45,6 +41,7 @@ def Exit():
     root.destroy()
 
 
+# Sign in
 def ok():
     def login():
         email = entry1.get()
@@ -53,16 +50,14 @@ def ok():
         if (email == "" and password == ""):
             messagebox.showinfo("", "Blank not allowed")
 
-        elif (email == "1" and password == "12345"):   #asankadilshan44098@gmail.com
+        elif (email == "1" and password == "12345"):  # asankadilshan44098@gmail.com
             messagebox.showinfo("", "Login success")
             root2.withdraw()
 
             root3 = Tk()
             root3.title("Customer Information System")
-            root3.geometry("1250x700+0+00")
+            root3.geometry("1250x750+0+00")
             root3.config(bg=background)
-
-            # def search():
 
             # top frames
             Label(root3, text='', width=10, height=1, bg="#429683", font="arial 28 bold").pack(side=TOP, fill=X)
@@ -85,12 +80,11 @@ def ok():
             # Get the active sheet
             sheet = workbook.active
 
-
-
             date_entry = Entry(root3, width=30)
-            date_entry.pack(pady=10)
+            date_entry.pack(pady=5)
 
-            search_button = Button(root3, text="Search", command=search)
+            search_button = Button(root3, text="Search", bg="#93E0EA", font='arial 10 bold', width=20, height=2,
+                                   command=search)
             search_button.pack(pady=5)
 
             search_results_frame = Frame(root3)
@@ -98,7 +92,7 @@ def ok():
 
             search_results = ttk.Treeview(search_results_frame)
             search_results["columns"] = (
-            "Registration No.", "Name", "Gender", "NIC", "Date of Come", "Time", "Address", "Tel. No.")
+                "Registration No.", "Name", "Gender", "NIC", "Date of Come", "Time", "Address", "Tel. No.")
 
             # Configure columns
             search_results.column("#0", width=0, stretch=NO)
@@ -129,15 +123,19 @@ def ok():
             scrollbar.pack(side=RIGHT, fill=Y)
             search_results.configure(yscrollcommand=scrollbar.set)
 
+            exit_button = Button(root3, text="Exit", bg="#93CAEA", font='arial 10 bold', width=20, height=2,
+                                 command=exit)
+            exit_button.pack(pady=5)
+
             # bottom frames
             Label(root3, text='', width=10, height=1, bg="#429683", ).pack(side=BOTTOM, fill=X)
             Label(root3, text='077-0867965', width=10, height=1, bg="#429683", font='arial 10 bold').pack(side=BOTTOM,
-                                                                                                         fill=X)
+                                                                                                          fill=X)
             Label(root3, text='Galle', width=10, height=1, bg="#429683", font='arial 10 bold').pack(side=BOTTOM, fill=X)
             Label(root3, text='Karagoda', width=10, height=1, bg="#429683", font='arial 10 bold').pack(side=BOTTOM,
-                                                                                                      fill=X)
+                                                                                                       fill=X)
             Label(root3, text='Mulanagoda,', width=10, height=1, bg="#429683", font='arial 10 bold').pack(side=BOTTOM,
-                                                                                                         fill=X)
+                                                                                                          fill=X)
 
             Label(root3, text='Thank You Come Again', width=10, height=2, bg="#70BBAA", fg='#fff',
                   font='arial 20 bold').pack(
@@ -153,7 +151,7 @@ def ok():
 
     root2 = Tk()
     root2.title("Customer Information System")
-    root2.geometry("1250x700+0+00")
+    root2.geometry("1250x750+0+00")
     root2.config(bg=background)
 
     global entry1
@@ -176,38 +174,29 @@ def ok():
         side=BOTTOM, fill=X)
 
     # Sign in Window
-    obj =  LabelFrame(root2, text="User Login", font=20, bd=2, width=345, bg=framebg, fg=framefg, height=300,)
-    obj.place(x=460, y=200)
+    obj = LabelFrame(root2, text="User Login", font=20, bd=2, width=345, bg=framebg, fg=framefg, height=300, )
+    obj.place(x=460, y=220)
     Label(root2, text="E-mail", width=8).place(x=500, y=280)
     Label(root2, text="Password", width=8).place(x=500, y=330)
 
     Email = StringVar()
     entry1 = Entry(obj, textvariable=Email, width=30, font="arial 10")
-    entry1.place(x=120, y=55)
+    entry1.place(x=110, y=40)
 
     Password = StringVar()
     entry2 = Entry(obj, textvariable=Password, width=30, font="arial 10")
-    entry2.place(x=120, y=105)
+    entry2.place(x=110, y=90)
     entry2.config(show="*")
 
-    Button(root2, text="Sign in", width=10, height=1, font="arial 12 bold", bg="#81CBEB", command=login).place(x=640,
-                                                                                                                 y=395)
-    Button(root2, text="Exit", width=10, height=1, font="arial 12 bold", bg="#93CAEA", command=Exit1).place(x=510,
-                                                                                                              y=395)
+    Button(root2, text="Sign in", width=12, height=2, font="arial 12 bold", bg="#81CBEB", command=login).place(x=490,
+                                                                                                               y=400)
+    Button(root2, text="Exit", width=12, height=2, font="arial 12 bold", bg="#93CAEA", command=Exit1).place(x=645,
+                                                                                                            y=400)
     root.withdraw()
 
     root2.mainloop()
 
 
-# time
-# def my_time():
-# time_string = strftime("%H:%M:%S %p")
-# te_str.set(time_string)
-# my_time = Time.my_time()
-# t1 = my_time.strftime("%H:%M:%S %p")
-
-# Time.set(t1)
-# Registration No.
 def registration_no():
     file = openpyxl.load_workbook('Customer_data.xlsx')
     sheet = file.active
@@ -223,15 +212,12 @@ def registration_no():
         Registration.set("1")
 
 
-
 def Clear():
     Name.set('')
     NIC.set('')
     Time.set('')
     Address.set('')
     Tel.set('')
-
-    # Gender.set("Select Gender")
 
     registration_no()
 
@@ -298,10 +284,10 @@ Label(root, text='!..Welcome..!', width=10, height=2, bg="#70BBAA", fg='#fff', f
 
 # bottom frames
 Label(root, text='', width=10, height=1, bg="#429683", ).pack(side=BOTTOM, fill=X)
-Label(root, text='077-0867965', width=10, height=1, bg="#429683", font='arial 10 bold' ).pack(side=BOTTOM, fill=X)
-Label(root, text='Galle', width=10, height=1, bg="#429683", font='arial 10 bold' ).pack(side=BOTTOM, fill=X)
-Label(root, text='Karagoda', width=10, height=1, bg="#429683", font='arial 10 bold' ).pack(side=BOTTOM, fill=X)
-Label(root, text='Mulanagoda,', width=10, height=1, bg="#429683", font='arial 10 bold' ).pack(side=BOTTOM, fill=X)
+Label(root, text='077-0867965', width=10, height=1, bg="#429683", font='arial 10 bold').pack(side=BOTTOM, fill=X)
+Label(root, text='Galle', width=10, height=1, bg="#429683", font='arial 10 bold').pack(side=BOTTOM, fill=X)
+Label(root, text='Karagoda', width=10, height=1, bg="#429683", font='arial 10 bold').pack(side=BOTTOM, fill=X)
+Label(root, text='Mulanagoda,', width=10, height=1, bg="#429683", font='arial 10 bold').pack(side=BOTTOM, fill=X)
 
 Label(root, text='Thank You Come Again', width=10, height=2, bg="#70BBAA", fg='#fff', font='arial 20 bold').pack(
     side=BOTTOM, fill=X)
@@ -329,18 +315,16 @@ Date.set(d1)
 
 time_label = Label(root, text="", font='arial 10', width=15)
 time_label.place(x=800, y=200)
+
+
 def update_time():
     current_time = strftime("%H:%M:%S %p")
     time_label.config(text=current_time)
     root.after(1000, update_time)
 
-update_time()
-#day = time.day()
-#t1 = day.strftime("%H:%M:%S %p")
-#time_entry = Entry(root, textvariable="Time", width=15, font='arial 10')
-#time_entry.place(x=750, y=200)
 
-#Time.set(t1)
+update_time()
+
 # Customer details
 obj = LabelFrame(root, text="Customer's Details", font=20, bd=3, width=900, bg=framebg, fg=framefg, height=250,
                  relief=GROOVE)
@@ -369,33 +353,11 @@ NIC = StringVar()
 nic_entry = Entry(obj, textvariable=NIC, width=20, font="arial 10")
 nic_entry.place(x=180, y=150)
 
-# Time = StringVar()
-# Label(obj, text="Time:", font="arial 13", bg=framebg, fg=framefg).place(x=630, y=50)
 time_entry = Entry(obj, textvariable=Time, width=20, font="arial 10")
 time_entry.place(x=630, y=100)
 
-# current = time.current()
-# t1 = current.strftime("%d/%m/%Y")
-# time_entry = Entry(obj, textvariable=Time, width=15, font='arial 10')
-# time_entry.place(x=550, y=200)
-
-
-# Time.set(t1)
-# te=Entry(obj,textvariable=Time, width=20, font="arial 10")
-# te.place(x=630, y=50)
-
-# def update():
-#  t = strftime("%H:%M:%S %p")
-# te.config(text=t)
-# obj.after(1000, update)
-
-# update()
-
-# te.place(x=630, y=50)
-
-
 Address = StringVar()
-address_entry = Entry(obj, textvariable=Address, width=30,  font="arial 10")
+address_entry = Entry(obj, textvariable=Address, width=30, font="arial 10")
 address_entry.place(x=630, y=50)
 
 Tel = StringVar()
@@ -403,13 +365,13 @@ tel_entry = Entry(obj, textvariable=Tel, width=20, font="arial 10")
 tel_entry.place(x=630, y=150)
 
 # button
-Button(root, text="Sign in", width=19, height=2, font="arial 12 bold", bg="#81CBEB", command=ok).place(x=1000, y=200)
+Button(root, text="Sign in", width=19, height=2, font="arial 12 bold", bg="#81CBEB", command=ok).place(x=1000, y=215)
 
 saveButton = Button(root, text="Save", width=19, height=2, font="arial 12 bold", bg="#9BBEEA", command=Save)
-saveButton.place(x=1000, y=280)
+saveButton.place(x=1000, y=295)
 
-Button(root, text="Reset", width=19, height=2, font="arial 12 bold", bg="#93E0EA", command=Clear).place(x=1000, y=360)
+Button(root, text="Reset", width=19, height=2, font="arial 12 bold", bg="#93E0EA", command=Clear).place(x=1000, y=375)
 
-Button(root, text="Exit", width=19, height=2, font="arial 12 bold", bg="#93CAEA", command=Exit).place(x=1000, y=440)
+Button(root, text="Exit", width=19, height=2, font="arial 12 bold", bg="#93CAEA", command=Exit).place(x=1000, y=455)
 
 root.mainloop()
