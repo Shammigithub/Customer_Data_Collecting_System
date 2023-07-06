@@ -50,7 +50,7 @@ def ok():
         if (email == "" and password == ""):
             messagebox.showinfo("", "Blank not allowed")
 
-        elif (email == "1" and password == "12345"):  # asankadilshan44098@gmail.com
+        elif (email == "asankadilshan44098@gmail.com" and password == "12345"):  # asankadilshan44098@gmail.com
             messagebox.showinfo("", "Login success")
             root2.withdraw()
 
