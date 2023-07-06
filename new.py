@@ -172,6 +172,7 @@ def registration_no():
         Registration.set("1")
 
 
+
 def Clear():
     Name.set('')
     NIC.set('')
@@ -257,7 +258,7 @@ Label(root, text='Thank You Come Again', width=10, height=2, bg="#70BBAA", fg='#
 # Registration and Date
 Label(root, text="Registration No.", font='arial 13', fg=framebg, bg=background).place(x=30, y=200)
 Label(root, text="Date", font='arial 13', fg=framebg, bg=background).place(x=500, y=200)
-Label(root, text="Time", font='arial 13', fg=framebg, bg=background).place(x=700, y=200)
+Label(root, text="Time", font='arial 13', fg=framebg, bg=background).place(x=750, y=200)
 
 Registration = IntVar()
 Date = StringVar()
@@ -275,6 +276,14 @@ date_entry.place(x=550, y=200)
 
 Date.set(d1)
 
+time_label = Label(root, text="", font='arial 10', width=15)
+time_label.place(x=800, y=200)
+def update_time():
+    current_time = strftime("%H:%M:%S %p")
+    time_label.config(text=current_time)
+    root.after(1000, update_time)
+
+update_time()
 #day = time.day()
 #t1 = day.strftime("%H:%M:%S %p")
 #time_entry = Entry(root, textvariable="Time", width=15, font='arial 10')
