@@ -17,6 +17,7 @@ root = Tk()
 root.title("Customer Information System")
 root.geometry("1250x750+0+00")
 root.iconbitmap('customer.ico')
+root.resizable(0,0)
 root.config(bg=background)
 
 file = pathlib.Path('Customer_data.xlsx')
@@ -59,6 +60,7 @@ def ok():
             root3.title("Customer Information System")
             root3.geometry("1250x750+0+00")
             root3.iconbitmap('customer.ico')
+            root3.resizable(0, 0)
             root3.config(bg=background)
 
             # top frames
@@ -156,6 +158,7 @@ def ok():
     root2.title("Customer Information System")
     root2.geometry("1250x750+0+00")
     root2.iconbitmap('customer.ico')
+    root2.resizable(0, 0)
     root2.config(bg=background)
 
     global entry1
