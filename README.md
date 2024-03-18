@@ -1,9 +1,27 @@
 
 # Customer_Data_Collecting_System
 
-I motivated to implement this project because of the Covid-19. Our implemented system streamlines the entry process by allowing customers to conveniently enter and save their information. With exclusive access granted to the shop owner, they can retrieve customer data for any desired date, enabling them to maintain accurate records and make informed decisions. This secure and user-friendly platform prioritizes data security and compliance with regulations, enhancing access control procedures for a smoother experience for customers and the owner alike.
+This desktop application is designed for shop owners to collect customer data during the COVID-19 period. It allows shop owners to record the details of customers who visit their shop each day.
 
+## Motivation
+The motivation behind this project is to help shop owners adhere to COVID-19 guidelines by collecting customer data for contact tracing purposes.
 
+## Features
+- Record details of customers who visit the shop each day.
+- View a list of customers who have visited the shop.
+
+## Technologies Used
+- Python
+- Tkinter
+- Openpyxl
+
+## Getting Started
+1. Clone this repository.
+2. Run the `customer_data_collection.py` file using Python.
+3. Enter the details of customers who visit the shop.
+4. Save the data for future reference.
+
+## Screenshots
 
 1st window => For Customers uses ![Screenshot (213)](https://github.com/Shammigithub/Customer_Data_Collecting_System/assets/99946678/db1d0066-fc64-404d-ad17-972e1cb66bde)
 
